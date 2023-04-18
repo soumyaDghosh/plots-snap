@@ -1,0 +1,62 @@
+name: plots # you probably want to 'snapcraft register <name>'
+base: core22 # the base snap is the execution environment for this snap
+version: '0.8.4' # just for humans, typically '1.2+git' or '1.3.2'
+adopt-info: plots
+grade: devel # must be 'stable' to release into candidate/stable channels
+confinement: strict # use 'strict' once you have the right plugs and slots
+architecture:
+  - build-on: amd64
+  - build-on: arm64
+  - build-on: armhf
+plugs:
+  plots:
+    interface: dbus
+    bus: session
+    name: com.github.alexhuntley.Plots
+
+#environment:
+  # WORKAROUND: Add python modules in Snap to search path
+#  PYTHONPATH: ${SNAP}/lib/python3.10/site-packages:${SNAP}/usr/lib/python3/dist-packages
+parts:
+  plots:
+    # See 'snapcraft plugins'
+    plugin: python
+    source: https://github.com/alexhuntley/Plots.git
+    source-tag: v${SNAPCRAFT_PROJECT_VERSION}
+#    build-environment:
+      # WORKAROUND: The python plugin is broken with gnome extension
+#      - PATH: ${CRAFT_PART_INSTALL}/bin:${PATH}
+#      - PYTHONPATH: ""
+#    stage:
+#      # WORKAROUND: Skip venv from python plugin
+#      - -bin/activate
+#      - -bin/activate.csh
+#      - -bin/activate.fish
+#      - -bin/Activate.ps1
+#      - -bin/python
+#      - -bin/python3
+#      - -bin/python3.10
+#      - -bin/pip
+#      - -bin/pip3
+#      - -pyvenv.cfg
+    python-packages:
+      - PyOpenGL
+      - numpy
+      - lark
+      - PyGLM
+      - freetype-py
+    build-packages:
+      - python3-jinja2
+    override-build: |
+      craftctl default
+#      sed -e 's|Icon=com.github.alexhuntley.Plots|Icon=/usr/local/share/icons/hicolor/scalable/apps/res/com.github.alexhuntley.Plots.svg|g' -i res/com.github.alexhuntley.Plots.desktop
+      # WORKAROUND: Use python from search path, the path detected by meson doesn't exist when running the Snap
+      # sed -e '1c#!/usr/bin/env python3' -i "${CRAFT_PART_INSTALL}/usr/bin/plots"
+    parse-info: [share/metainfo/com.github.alexhuntley.Plots.metainfo.xml]
+apps:
+  plots:
+    command: bin/plots
+    extensions: [gnome]
+    common-id: com.github.alexhuntley.Plots
+    plugs:
+      - home
