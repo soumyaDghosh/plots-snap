@@ -15,9 +15,9 @@ plugs:
     bus: session
     name: com.github.alexhuntley.Plots
 
-#environment:
+environment:
   # WORKAROUND: Add python modules in Snap to search path
-#  PYTHONPATH: ${SNAP}/lib/python3.10/site-packages:${SNAP}/usr/lib/python3/dist-packages
+  PYTHONPATH: ${SNAP}/lib/python3.10/site-packages:${SNAP}/usr/lib/python3/dist-packages
 parts:
   plots:
     # See 'snapcraft plugins'
