@@ -52,18 +52,18 @@ parts:
       craftctl default
       # WORKAROUND: Use python from search path, the path detected by meson doesn't exist when running the Snap
       install -D $CRAFT_PART_SRC/res/com.github.alexhuntley.Plots.metainfo.xml -t $CRAFT_PART_INSTALL/share/metainfo/
-      install -D $CRAFT_PART_SRC/C/* -t $CRAFT_PART_INSTALL/share/help/C/plots/ 
-      install -D $CRAFT_PART_SRC/de/* -t $CRAFT_PART_INSTALL/share/help/de/plots/
-      install -D $CRAFT_PART_SRC/es/* -t $CRAFT_PART_INSTALL/share/help/es/plots/ 
-      install -D $CRAFT_PART_SRC/fa/* -t $CRAFT_PART_INSTALL/share/help/fa/plots/ 
-      install -D $CRAFT_PART_SRC/fr/* -t $CRAFT_PART_INSTALL/share/help/fr/plots/ 
-      install -D $CRAFT_PART_SRC/hr/* -t $CRAFT_PART_INSTALL/share/help/hr/plots/ 
-      install -D $CRAFT_PART_SRC/hu/* -t $CRAFT_PART_INSTALL/share/help/hu/plots/ 
-      install -D $CRAFT_PART_SRC/it/* -t $CRAFT_PART_INSTALL/share/help/it/plots/ 
-      install -D $CRAFT_PART_SRC/nb_NO/* -t $CRAFT_PART_INSTALL/share/help/nb_NO/plots/ 
-      install -D $CRAFT_PART_SRC/nl/* -t $CRAFT_PART_INSTALL/share/help/nl/plots/ 
-      install -D $CRAFT_PART_SRC/pt_BR/* -t $CRAFT_PART_INSTALL/share/help/pt_BR/plots/ 
-      install -D $CRAFT_PART_SRC/zh_Hans/* -t $CRAFT_PART_INSTALL/share/help/zh_Hans/plots/ 
+      install -D $CRAFT_PART_SRC/help/C/* -t $CRAFT_PART_INSTALL/share/help/C/plots/ 
+      install -D $CRAFT_PART_SRC/help/de/* -t $CRAFT_PART_INSTALL/share/help/de/plots/
+      install -D $CRAFT_PART_SRC/help/es/* -t $CRAFT_PART_INSTALL/share/help/es/plots/ 
+      install -D $CRAFT_PART_SRC/help/fa/* -t $CRAFT_PART_INSTALL/share/help/fa/plots/ 
+      install -D $CRAFT_PART_SRC/help/fr/* -t $CRAFT_PART_INSTALL/share/help/fr/plots/ 
+      install -D $CRAFT_PART_SRC/help/hr/* -t $CRAFT_PART_INSTALL/share/help/hr/plots/ 
+      install -D $CRAFT_PART_SRC/help/hu/* -t $CRAFT_PART_INSTALL/share/help/hu/plots/ 
+      install -D $CRAFT_PART_SRC/help/it/* -t $CRAFT_PART_INSTALL/share/help/it/plots/ 
+      install -D $CRAFT_PART_SRC/help/nb_NO/* -t $CRAFT_PART_INSTALL/share/help/nb_NO/plots/ 
+      install -D $CRAFT_PART_SRC/help/nl/* -t $CRAFT_PART_INSTALL/share/help/nl/plots/ 
+      install -D $CRAFT_PART_SRC/help/pt_BR/* -t $CRAFT_PART_INSTALL/share/help/pt_BR/plots/ 
+      install -D $CRAFT_PART_SRC/help/zh_Hans/* -t $CRAFT_PART_INSTALL/share/help/zh_Hans/plots/ 
     parse-info: [share/metainfo/com.github.alexhuntley.Plots.metainfo.xml]
 apps:
   plots:
