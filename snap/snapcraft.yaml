@@ -24,22 +24,22 @@ parts:
     plugin: python
     source: https://github.com/alexhuntley/Plots.git
     source-tag: v${SNAPCRAFT_PROJECT_VERSION}
-#    build-environment:
+    build-environment:
       # WORKAROUND: The python plugin is broken with gnome extension
-#      - PATH: ${CRAFT_PART_INSTALL}/bin:${PATH}
-#      - PYTHONPATH: ""
-#    stage:
-#      # WORKAROUND: Skip venv from python plugin
-#      - -bin/activate
-#      - -bin/activate.csh
-#      - -bin/activate.fish
-#      - -bin/Activate.ps1
-#      - -bin/python
-#      - -bin/python3
-#      - -bin/python3.10
-#      - -bin/pip
-#      - -bin/pip3
-#      - -pyvenv.cfg
+      - PATH: ${CRAFT_PART_INSTALL}/bin:${PATH}
+      - PYTHONPATH: ""
+    stage:
+      # WORKAROUND: Skip venv from python plugin
+      - -bin/activate
+      - -bin/activate.csh
+      - -bin/activate.fish
+      - -bin/Activate.ps1
+      - -bin/python
+      - -bin/python3
+      - -bin/python3.10
+      - -bin/pip
+      - -bin/pip3
+      - -pyvenv.cfg
     python-packages:
       - PyOpenGL
       - numpy
@@ -48,8 +48,8 @@ parts:
       - freetype-py
     build-packages:
       - python3-jinja2
-    override-build: |
-      craftctl default
+#    override-build: |
+#      craftctl default
 #      sed -e 's|Icon=com.github.alexhuntley.Plots|Icon=/usr/local/share/icons/hicolor/scalable/apps/res/com.github.alexhuntley.Plots.svg|g' -i res/com.github.alexhuntley.Plots.desktop
       # WORKAROUND: Use python from search path, the path detected by meson doesn't exist when running the Snap
       # sed -e '1c#!/usr/bin/env python3' -i "${CRAFT_PART_INSTALL}/usr/bin/plots"
