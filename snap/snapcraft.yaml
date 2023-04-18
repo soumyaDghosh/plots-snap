@@ -46,6 +46,7 @@ parts:
       - lark
       - PyGLM
       - freetype-py
+      - PyGObject==3.42.2
     build-packages:
       - python3-jinja2
     override-build: |
