@@ -23,7 +23,6 @@ parts:
     after: [ pycairo, meson-deps ]
     source: https://gitlab.gnome.org/amolenaar/pygobject.git
     source-branch: gtk-4-10-css-provider
-    source-depth: 1
     plugin: meson
     meson-parameters:
       - --prefix=/usr
