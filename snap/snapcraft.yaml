@@ -29,7 +29,6 @@ parts:
       - --prefix=/usr
       - -Doptimization=3
       - -Ddebug=true
-    build-environment: *buildenv
   plots:
     after: [pygobject]
     # See 'snapcraft plugins'
