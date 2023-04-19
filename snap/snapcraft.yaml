@@ -62,6 +62,7 @@ parts:
     override-pull: |
       craftctl default
       sed -i "s|self.provider.load_from_data(css.encode())|self.provider.load_from_data(css, -1)|" plots/colorpicker.py
+      sed -i "s|css_provider.load_from_data(css.encode())|css_provider.load_from_data(css, -1)|" plots/plots.py
     override-build: |
       craftctl default
       install -D $CRAFT_PART_SRC/res/com.github.alexhuntley.Plots.metainfo.xml -t $CRAFT_PART_INSTALL/share/metainfo/
