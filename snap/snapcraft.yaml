@@ -19,7 +19,19 @@ environment:
   # WORKAROUND: Add python modules in Snap to search path
   PYTHONPATH: ${SNAP}/lib/python3.10/site-packages:${SNAP}/usr/lib/python3/dist-packages
 parts:
+  pygobject:
+    after: [ pycairo, meson-deps ]
+    source: https://gitlab.gnome.org/amolenaar/pygobject.git
+    source-branch: gtk-4-10-css-provider
+    source-depth: 1
+    plugin: meson
+    meson-parameters:
+      - --prefix=/usr
+      - -Doptimization=3
+      - -Ddebug=true
+    build-environment: *buildenv
   plots:
+    after: [pygobject]
     # See 'snapcraft plugins'
     plugin: python
     source: https://github.com/alexhuntley/Plots.git
@@ -46,7 +58,6 @@ parts:
       - lark
       - PyGLM
       - freetype-py
-      - PyGObject==3.42.2
     build-packages:
       - python3-jinja2
     override-build: |
