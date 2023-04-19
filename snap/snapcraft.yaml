@@ -19,18 +19,18 @@ environment:
   # WORKAROUND: Add python modules in Snap to search path
   PYTHONPATH: ${SNAP}/lib/python3.10/site-packages:${SNAP}/usr/lib/python3/dist-packages
 parts:
-  pygobject:
-    source: https://gitlab.gnome.org/amolenaar/pygobject.git
-    source-branch: gtk-4-10-css-provider
-    plugin: meson
-    meson-parameters:
-      - --prefix=/usr
-      - -Doptimization=3
-      - -Ddebug=true
-    prime:
-      - usr/lib
+ # pygobject:
+ #   source: https://gitlab.gnome.org/amolenaar/pygobject.git
+ #   source-branch: gtk-4-10-css-provider
+ #   plugin: meson
+ #   meson-parameters:
+ #     - --prefix=/usr
+ #     - -Doptimization=3
+ #     - -Ddebug=true
+ #   prime:
+ #     - usr/lib
   plots:
-    after: [pygobject]
+    #after: [pygobject]
     # See 'snapcraft plugins'
     plugin: python
     source: https://github.com/alexhuntley/Plots.git
@@ -59,9 +59,11 @@ parts:
       - freetype-py
     build-packages:
       - python3-jinja2
+    override-pull: |
+      craftctl default
+      sed -i "s|self.provider.load_from_data(css.encode())|self.provider.load_from_data(css, -1)|" plots/colorpicker.py
     override-build: |
       craftctl default
-      # WORKAROUND: Use python from search path, the path detected by meson doesn't exist when running the Snap
       install -D $CRAFT_PART_SRC/res/com.github.alexhuntley.Plots.metainfo.xml -t $CRAFT_PART_INSTALL/share/metainfo/
       install -D $CRAFT_PART_SRC/help/C/* -t $CRAFT_PART_INSTALL/share/help/C/plots/ 
       install -D $CRAFT_PART_SRC/help/de/* -t $CRAFT_PART_INSTALL/share/help/de/plots/
