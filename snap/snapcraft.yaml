@@ -20,7 +20,6 @@ environment:
   PYTHONPATH: ${SNAP}/lib/python3.10/site-packages:${SNAP}/usr/lib/python3/dist-packages
 parts:
   pygobject:
-    after: [ pycairo, meson-deps ]
     source: https://gitlab.gnome.org/amolenaar/pygobject.git
     source-branch: gtk-4-10-css-provider
     plugin: meson
