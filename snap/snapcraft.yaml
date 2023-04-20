@@ -62,7 +62,6 @@ parts:
     override-build: |
       craftctl default
       install -D $CRAFT_PART_SRC/res/com.github.alexhuntley.Plots.metainfo.xml -t $CRAFT_PART_INSTALL/share/metainfo/
-      install -D $CRAFT_PART_SRC/res/com.github.alexhuntley.Plots.desktop -t $CRAFT_PART_INSTALL/share/applications/
       install -D $CRAFT_PART_SRC/help/C/* -t $CRAFT_PART_INSTALL/share/help/C/plots/ 
       install -D $CRAFT_PART_SRC/help/de/* -t $CRAFT_PART_INSTALL/share/help/de/plots/
       install -D $CRAFT_PART_SRC/help/es/* -t $CRAFT_PART_INSTALL/share/help/es/plots/ 
@@ -80,7 +79,6 @@ apps:
   plots:
     command: bin/plots
     extensions: [gnome]
-    desktop: share/applications/com.github.alexhuntley.Plots.desktop
     common-id: com.github.alexhuntley.Plots
     environment:
       PYTHONPATH: ${SNAP}/lib/python3.10/site-packages:$PYTHONPATH
