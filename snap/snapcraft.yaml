@@ -9,7 +9,7 @@ architectures:
   - build-on: amd64
   - build-on: arm64
 #  - build-on: armhf
-plugs:
+slots:
   plots:
     interface: dbus
     bus: session
