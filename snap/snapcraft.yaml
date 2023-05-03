@@ -71,10 +71,10 @@ parts:
       install -D $CRAFT_PART_SRC/help/nl/* -t $CRAFT_PART_INSTALL/share/help/nl/plots/ 
       install -D $CRAFT_PART_SRC/help/pt_BR/* -t $CRAFT_PART_INSTALL/share/help/pt_BR/plots/ 
       install -D $CRAFT_PART_SRC/help/zh_Hans/* -t $CRAFT_PART_INSTALL/share/help/zh_Hans/plots/ 
-      install -D $$CRAFT_PART_SRC/help/cs/* -t $CRAFT_PART_INSTALL/share/help/cs/plots/
-      install -D $$CRAFT_PART_SRC/help/lt/* -t $CRAFT_PART_INSTALL/share/help/lt/plots/
-      install -D $$CRAFT_PART_SRC/help/tr/* -t $CRAFT_PART_INSTALL/share/help/tr/plots/
-      install -D $$CRAFT_PART_SRC/help/uk/* -t $CRAFT_PART_INSTALL/share/help/uk/plots/
+      install -D $CRAFT_PART_SRC/help/cs/* -t $CRAFT_PART_INSTALL/share/help/cs/plots/
+      install -D $CRAFT_PART_SRC/help/lt/* -t $CRAFT_PART_INSTALL/share/help/lt/plots/
+      install -D $CRAFT_PART_SRC/help/tr/* -t $CRAFT_PART_INSTALL/share/help/tr/plots/
+      install -D $CRAFT_PART_SRC/help/uk/* -t $CRAFT_PART_INSTALL/share/help/uk/plots/
     parse-info: [share/metainfo/com.github.alexhuntley.Plots.metainfo.xml]
 apps:
   plots:
