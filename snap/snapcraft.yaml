@@ -1,6 +1,6 @@
 name: plots # you probably want to 'snapcraft register <name>'
 base: core22 # the base snap is the execution environment for this snap
-version: '0.8.4' # just for humans, typically '1.2+git' or '1.3.2'
+version: '0.8.5' # just for humans, typically '1.2+git' or '1.3.2'
 adopt-info: plots
 icon: snap/gui/plots.svg
 grade: stable # must be 'stable' to release into candidate/stable channels
@@ -55,10 +55,6 @@ parts:
       - freetype-py
     build-packages:
       - python3-jinja2
-    override-pull: |
-      craftctl default
-      sed -i "s|self.provider.load_from_data(css.encode())|self.provider.load_from_data(css, -1)|" plots/colorpicker.py
-      sed -i "s|css_provider.load_from_data(css.encode())|css_provider.load_from_data(css, -1)|" plots/plots.py
     override-build: |
       craftctl default
       install -D $CRAFT_PART_SRC/res/com.github.alexhuntley.Plots.metainfo.xml -t $CRAFT_PART_INSTALL/share/metainfo/
@@ -75,6 +71,10 @@ parts:
       install -D $CRAFT_PART_SRC/help/nl/* -t $CRAFT_PART_INSTALL/share/help/nl/plots/ 
       install -D $CRAFT_PART_SRC/help/pt_BR/* -t $CRAFT_PART_INSTALL/share/help/pt_BR/plots/ 
       install -D $CRAFT_PART_SRC/help/zh_Hans/* -t $CRAFT_PART_INSTALL/share/help/zh_Hans/plots/ 
+      install -D $$CRAFT_PART_SRC/help/cs/* -t $CRAFT_PART_INSTALL/share/help/cs/plots/
+      install -D $$CRAFT_PART_SRC/help/lt/* -t $CRAFT_PART_INSTALL/share/help/lt/plots/
+      install -D $$CRAFT_PART_SRC/help/tr/* -t $CRAFT_PART_INSTALL/share/help/tr/plots/
+      install -D $$CRAFT_PART_SRC/help/uk/* -t $CRAFT_PART_INSTALL/share/help/uk/plots/
     parse-info: [share/metainfo/com.github.alexhuntley.Plots.metainfo.xml]
 apps:
   plots:
