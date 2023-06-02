@@ -1,3 +1,14 @@
+diff -Naur b/res/com.github.alexhuntley.Plots.desktop a/res/com.github.alexhuntley.Plots.desktop
+--- b/res/com.github.alexhuntley.Plots.desktop	2023-06-02 23:26:38.396498938 +0530
++++ a/res/com.github.alexhuntley.Plots.desktop	2023-06-02 23:27:25.511556990 +0530
+@@ -27,5 +27,5 @@
+ Comment[uk]=Простий побудовник графіків
+ Exec=plots
+ Type=Application
+-Icon=com.github.alexhuntley.Plots
++Icon=snap.plots.com.github.alexhuntley.Plots
+ Categories=GNOME;GTK;Science;Math;Education
+diff -Naur b/res/com.github.alexhuntley.Plots.metainfo.xml a/res/com.github.alexhuntley.Plots.metainfo.xml
 --- b/res/com.github.alexhuntley.Plots.metainfo.xml	2023-06-02 22:49:15.199623783 +0530
 +++ a/res/com.github.alexhuntley.Plots.metainfo.xml	2023-06-02 22:48:22.787499079 +0530
 @@ -2,6 +2,7 @@
