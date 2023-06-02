@@ -17,7 +17,7 @@ parts:
     # See 'snapcraft plugins'
     plugin: python
     source: https://github.com/alexhuntley/Plots.git
-    source-tag: v${SNAPCRAFT_PROJECT_VERSION}
+    source-tag: 'v0.8.5'
     build-environment:
       # WORKAROUND: The python plugin is broken with gnome extension
       - PATH: ${CRAFT_PART_INSTALL}/bin:${PATH}
