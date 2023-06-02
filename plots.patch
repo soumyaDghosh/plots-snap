@@ -1,0 +1,10 @@
+--- b/res/com.github.alexhuntley.Plots.metainfo.xml	2023-06-02 22:49:15.199623783 +0530
++++ a/res/com.github.alexhuntley.Plots.metainfo.xml	2023-06-02 22:48:22.787499079 +0530
+@@ -2,6 +2,7 @@
+ <!-- Copyright 2021 Alexander Huntley <huntley.alexander@gmail.com> -->
+ <component type="desktop-application">
+   <id>com.github.alexhuntley.Plots</id>
++  <icon type="stock">snap.plots.com.github.alexhuntley.Plots</icon>
+   <metadata_license>FSFAP</metadata_license>
+   <project_license>GPL-3.0-or-later</project_license>
+   <name>Plots</name>
