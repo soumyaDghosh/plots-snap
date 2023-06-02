@@ -50,7 +50,7 @@ parts:
       install -D $CRAFT_PART_SRC/res/com.github.alexhuntley.Plots.metainfo.xml -t $CRAFT_PART_INSTALL/share/metainfo/
       install -D $CRAFT_PART_SRC/res/com.github.alexhuntley.Plots.desktop -t $CRAFT_PART_INSTALL/share/applications/
       install -D $CRAFT_PART_SRC/res/com.github.alexhuntley.Plots-symbolic.svg $CRAFT_PART_INSTALL/meta/gui/icons/hicolor/symbolic/apps/snap.plots.com.github.alexhuntley.Plots-symbolic.svg
-      install -D $CRAFT_PART_SRC/res/com.github.alexhuntley.Plots.svg $CRAFT_PART_INSTALL/meta/gui/icons/hicolor/symbolic/apps/snap.plots.com.github.alexhuntley.Plots.svg
+      install -D $CRAFT_PART_SRC/res/com.github.alexhuntley.Plots.svg $CRAFT_PART_INSTALL/meta/gui/icons/hicolor/scalable/apps/snap.plots.com.github.alexhuntley.Plots.svg
       install -D $CRAFT_PART_SRC/help/C/* -t $CRAFT_PART_INSTALL/share/help/C/plots/ 
       install -D $CRAFT_PART_SRC/help/de/* -t $CRAFT_PART_INSTALL/share/help/de/plots/
       install -D $CRAFT_PART_SRC/help/es/* -t $CRAFT_PART_INSTALL/share/help/es/plots/ 
