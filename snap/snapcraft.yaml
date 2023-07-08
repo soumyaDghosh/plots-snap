@@ -18,6 +18,7 @@ parts:
     plugin: python
     source: https://github.com/alexhuntley/Plots.git
     source-tag: 'v0.8.5'
+    source-depth: 1
     build-environment:
       # WORKAROUND: The python plugin is broken with gnome extension
       - PATH: ${CRAFT_PART_INSTALL}/bin:${PATH}
