@@ -50,20 +50,20 @@ parts:
       craftctl default
       install -D $CRAFT_PART_SRC/res/com.github.alexhuntley.Plots.metainfo.xml -t $CRAFT_PART_INSTALL/share/metainfo/
       install -D $CRAFT_PART_SRC/res/com.github.alexhuntley.Plots.desktop -t $CRAFT_PART_INSTALL/share/applications/
-      install -D $CRAFT_PART_SRC/res/com.github.alexhuntley.Plots-symbolic.svg $CRAFT_PART_INSTALL/meta/gui/snap.plots.com.github.alexhuntley.Plots-symbolic.svg
-      install -D $CRAFT_PART_SRC/res/com.github.alexhuntley.Plots.svg $CRAFT_PART_INSTALL/meta/gui/snap.plots.com.github.alexhuntley.Plots.svg
-      install -D $CRAFT_PART_SRC/help/C/* -t $CRAFT_PART_INSTALL/share/help/C/plots/ 
+      install -D $CRAFT_PART_SRC/res/com.github.alexhuntley.Plots-symbolic.svg $CRAFT_PART_INSTALL/meta/gui/icons/hicolor/symbolic/snap.plots.com.github.alexhuntley.Plots-symbolic.svg
+      install -D $CRAFT_PART_SRC/res/com.github.alexhuntley.Plots.svg $CRAFT_PART_INSTALL/meta/gui/icons/hicolor/scalable/snap.plots.com.github.alexhuntley.Plots.svg
+      install -D $CRAFT_PART_SRC/help/C/* -t $CRAFT_PART_INSTALL/share/help/C/plots/
       install -D $CRAFT_PART_SRC/help/de/* -t $CRAFT_PART_INSTALL/share/help/de/plots/
-      install -D $CRAFT_PART_SRC/help/es/* -t $CRAFT_PART_INSTALL/share/help/es/plots/ 
-      install -D $CRAFT_PART_SRC/help/fa/* -t $CRAFT_PART_INSTALL/share/help/fa/plots/ 
-      install -D $CRAFT_PART_SRC/help/fr/* -t $CRAFT_PART_INSTALL/share/help/fr/plots/ 
-      install -D $CRAFT_PART_SRC/help/hr/* -t $CRAFT_PART_INSTALL/share/help/hr/plots/ 
-      install -D $CRAFT_PART_SRC/help/hu/* -t $CRAFT_PART_INSTALL/share/help/hu/plots/ 
-      install -D $CRAFT_PART_SRC/help/it/* -t $CRAFT_PART_INSTALL/share/help/it/plots/ 
-      install -D $CRAFT_PART_SRC/help/nb_NO/* -t $CRAFT_PART_INSTALL/share/help/nb_NO/plots/ 
-      install -D $CRAFT_PART_SRC/help/nl/* -t $CRAFT_PART_INSTALL/share/help/nl/plots/ 
-      install -D $CRAFT_PART_SRC/help/pt_BR/* -t $CRAFT_PART_INSTALL/share/help/pt_BR/plots/ 
-      install -D $CRAFT_PART_SRC/help/zh_Hans/* -t $CRAFT_PART_INSTALL/share/help/zh_Hans/plots/ 
+      install -D $CRAFT_PART_SRC/help/es/* -t $CRAFT_PART_INSTALL/share/help/es/plots/
+      install -D $CRAFT_PART_SRC/help/fa/* -t $CRAFT_PART_INSTALL/share/help/fa/plots/
+      install -D $CRAFT_PART_SRC/help/fr/* -t $CRAFT_PART_INSTALL/share/help/fr/plots/
+      install -D $CRAFT_PART_SRC/help/hr/* -t $CRAFT_PART_INSTALL/share/help/hr/plots/
+      install -D $CRAFT_PART_SRC/help/hu/* -t $CRAFT_PART_INSTALL/share/help/hu/plots/
+      install -D $CRAFT_PART_SRC/help/it/* -t $CRAFT_PART_INSTALL/share/help/it/plots/
+      install -D $CRAFT_PART_SRC/help/nb_NO/* -t $CRAFT_PART_INSTALL/share/help/nb_NO/plots/
+      install -D $CRAFT_PART_SRC/help/nl/* -t $CRAFT_PART_INSTALL/share/help/nl/plots/
+      install -D $CRAFT_PART_SRC/help/pt_BR/* -t $CRAFT_PART_INSTALL/share/help/pt_BR/plots/
+      install -D $CRAFT_PART_SRC/help/zh_Hans/* -t $CRAFT_PART_INSTALL/share/help/zh_Hans/plots/
       install -D $CRAFT_PART_SRC/help/cs/* -t $CRAFT_PART_INSTALL/share/help/cs/plots/
       install -D $CRAFT_PART_SRC/help/lt/* -t $CRAFT_PART_INSTALL/share/help/lt/plots/
       install -D $CRAFT_PART_SRC/help/tr/* -t $CRAFT_PART_INSTALL/share/help/tr/plots/
@@ -73,6 +73,13 @@ parts:
       - -include
       - -lib/python3.10/site-packages/PyGObject-3.44.1.dist-info
       - -bin/f2p*
+
+  fonts:
+    plugin: nil
+    source: https://www.gust.org.pl/projects/e-foundry/lm-math/download/latinmodern-math-1959.zip
+    override-build: |
+      craftctl default
+      install -D $CRAFT_PART_SRC/latinmodern-math/otf/latinmodern-math.otf -t $CRAFT_PART_INSTALL/usr/share/fonts/
 apps:
   plots:
     command: bin/plots
