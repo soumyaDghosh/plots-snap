@@ -79,7 +79,7 @@ parts:
     source: https://www.gust.org.pl/projects/e-foundry/lm-math/download/latinmodern-math-1959.zip
     override-build: |
       craftctl default
-      install -D $CRAFT_PART_SRC/latinmodern-math/otf/latinmodern-math.otf -t $CRAFT_PART_INSTALL/usr/share/fonts/
+      install -D $CRAFT_PART_SRC/latinmodern-math-1959/otf/latinmodern-math.otf -t $CRAFT_PART_INSTALL/usr/share/fonts/
 apps:
   plots:
     command: bin/plots
